@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Album Record:</h1>
+<div class="card">
+  <div class="card-header">
+    Album Details
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> {{ album_record.album_title }}</h5>
+    <p class="card-text">
+		<strong>ID: </strong>{{ album_record.id }}</p>
+		<strong>Artist Name: </strong>{{ album_record.artist_name }}</p>
+		<strong>Release Year: </strong>{{ album_record.release_year }}</p>
+		<strong>Genre: </strong>{{ album_record.genre }}</p>
+		<strong>Inclusions: </strong>{{ album_record.inclusions }}</p>
+		<strong>Created At: </strong>{{ album_record.created_at }}</p>
+  </div>
+</div>
+<br/><br/> 
+<a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+
+<a href="{% url 'delete_record' album_record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' album_record.id %}" class="btn btn-secondary">Update Record</a>
+
+
+{% endblock %}
